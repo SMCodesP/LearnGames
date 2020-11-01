@@ -7,7 +7,7 @@ class Menu:
     def __init__(self):
         engine = pygame_menu.sound.Sound()
         __audiodir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'audio', '{0}')
-        engine.set_sound(pygame_menu.sound.SOUND_TYPE_WIDGET_SELECTION, __audiodir__.format('vgmenuselect.ogg'))
+        engine.set_sound(pygame_menu.sound.SOUND_TYPE_WIDGET_SELECTION, '/home/smcodes/PycharmProjects/LearnGames/LearnMathAndScripts/resources/audio/vgmenuselect.ogg')
         fontMenu = pygame_menu.font.FONT_NEVIS
         __fontdir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'fonts', '{0}')
         minecrafter = __fontdir__.format('Minecrafter.otf')
@@ -33,16 +33,17 @@ class Menu:
         )
         self.menu_template = pygame_menu.Menu(720, 1280, title="Nomad warrior - Olympus prison", theme=theme)
         self.menu_template.add_text_input('Nome » ', default='SMCodes')
-        self.menu_template.add_selector(
-            'Dificuldade » ',
-            [('Dificil', 1), ('Medio', 2), ('Facil', 3)])
 
         def start_the_game():
             self.menu_template.disable()
             pass
 
         self.menu_template.add_button('Jogar', start_the_game)
+        self.menu_template.add_selector(
+            'Dificuldade » ',
+            [('Dificil', 1), ('Medio', 2), ('Facil', 3)])
         self.menu_template.add_button('Sair', pygame_menu.events.EXIT)
+        self.menu_template.set_sound(engine, recursive=True)
 
     def render(self, screen):
         self.menu_template.mainloop(screen)

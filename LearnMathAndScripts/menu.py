@@ -1,6 +1,6 @@
 import pygame_menu
 import os.path as path
-
+import globals
 
 class Menu:
 
@@ -31,7 +31,7 @@ class Menu:
             widget_alignment=pygame_menu.locals.ALIGN_RIGHT,
             widget_font_color=(255, 255, 255)
         )
-        self.menu_template = pygame_menu.Menu(720, 1280, title="Nomad warrior - Olympus prison", theme=theme)
+        self.menu_template = pygame_menu.Menu(globals.HEIGHT, globals.WIDTH, title="Nomad warrior - Olympus prison", theme=theme)
         self.menu_template.add_text_input('Nome » ', default='SMCodes')
 
         def start_the_game():

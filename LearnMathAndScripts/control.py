@@ -7,7 +7,7 @@ class Control:
         self.mov = 0
         self.top = 2
 
-    def use(self, obj):
+    def use(self, obj, pixels):
         key = pygame.key.get_pressed()
 
         if key[pygame.K_s]:
@@ -15,6 +15,9 @@ class Control:
             self.dir = 0
             self.top = 2
             obj.y += 1
+            for pixel in pixels:
+                if (pixel == (54, 50, 51)):
+                    print(pixel)
 
         if key[pygame.K_w]:
             self.mov += 1

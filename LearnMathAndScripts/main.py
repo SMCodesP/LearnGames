@@ -40,6 +40,9 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
+        if event.type == pygame.KEYDOWN:
+            if (event.key == pygame.K_TAB):
+                status_bar.draw()
         if event.type == pygame.KEYUP:
             if (event.key == pygame.K_w) or (event.key == pygame.K_s) or (event.key == pygame.K_a) or (event.key == pygame.K_d):
                 control.reset()

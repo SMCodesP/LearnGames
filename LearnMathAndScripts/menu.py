@@ -10,7 +10,7 @@ class Menu:
         engine.set_sound(pygame_menu.sound.SOUND_TYPE_WIDGET_SELECTION, globals.AUDIO_DIR.format('vgmenuselect.ogg'))
         fontMenu = pygame_menu.font.FONT_NEVIS
         __fontdir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'fonts', '{0}')
-        minecrafter = __fontdir__.format('Minecrafter.otf')
+        font_bangers = __fontdir__.format('bangers.ttf')
         __imagedir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'images', '{0}')
         theme = pygame_menu.themes.Theme(
             background_color=pygame_menu.baseimage.BaseImage(image_path=__imagedir__.format("wallpaper.jpg")),
@@ -20,7 +20,7 @@ class Menu:
             widget_selection_effect=pygame_menu.widgets.HighlightSelection(border_width=5, margin_x=25, margin_y=0),
             title_background_color=(224, 32, 65),
             title_font_color=(51, 51, 51),
-            title_font=fontMenu,
+            title_font=font_bangers,
             title_font_size=35,
             title_offset=(5, 0),
             title_shadow=True,

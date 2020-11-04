@@ -7,7 +7,7 @@ class Menu:
     def __init__(self):
         engine = pygame_menu.sound.Sound()
         __audiodir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'audio', '{0}')
-        engine.set_sound(pygame_menu.sound.SOUND_TYPE_WIDGET_SELECTION, '/home/smcodes/PycharmProjects/LearnGames/LearnMathAndScripts/resources/audio/vgmenuselect.ogg')
+        engine.set_sound(pygame_menu.sound.SOUND_TYPE_WIDGET_SELECTION, globals.AUDIO_DIR.format('vgmenuselect.ogg'))
         fontMenu = pygame_menu.font.FONT_NEVIS
         __fontdir__ = path.join(path.dirname(path.abspath(__file__)), 'resources', 'fonts', '{0}')
         minecrafter = __fontdir__.format('Minecrafter.otf')

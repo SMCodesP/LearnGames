@@ -8,6 +8,7 @@ from control import Control
 from monitor import Monitor
 from folder import Folder
 
+pygame.init()
 pygame.font.init()
 
 clock = pygame.time.Clock()
